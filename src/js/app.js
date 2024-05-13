@@ -30,7 +30,8 @@ window.onload = function() {
         "src/audio/tiptoe.mp3",
         "src/audio/yeulam.mp3",
         "src/audio/anhlangoailecuaem.mp3",
-        "src/audio/doi.mp3"
+        "src/audio/doi.mp3",
+        "src/audio/lunglay.mp3"
     ];
     let namee;
     const rd = Math.floor(Math.random() * myPlaylist.length);
@@ -38,6 +39,7 @@ window.onload = function() {
     if (rd === 2) namee = "Anh là ngoại lệ của em ";
     else if (rd === 1) namee = "Yêu nắm";
     else if (rd === 3) namee = "Đợi";
+else if(rd === 4) namee = "Lung lay";
     else namee = "Tip Toe";
 
     var randomSong = myPlaylist[rd];
