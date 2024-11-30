@@ -11,7 +11,7 @@ body {
 .card-container {
     position: relative;
     text-align: center;
-    margin-top: 100px; /* Khoảng cách từ trên xuống để tạo không gian cho avatar và tiêu đề */
+    margin-top: 100px;
   }
 
   .text {
@@ -68,7 +68,7 @@ body {
   .middle-circle {
     width: 175px;
     height: 175px;
-    background-image: url('https://cdn.discordapp.com/avatars/1231405751369601078/a_dec1b037408f4af465f9529e90ac6d3a.gif?size=1024');
+    background-image: url('https://cdn.discordapp.com/avatars/1231405751369601078/3ccade5ed8be4fc8184a2e70621cb3e9.png?size=1024');
     background-repeat: no-repeat;
     background-size: cover; 
     border-radius: 50%;
