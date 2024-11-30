@@ -72,11 +72,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover; 
     border-radius: 50%;
-    position: fixed; /* Sử dụng position: fixed */
-    top: 25%; /* Đặt top ở giữa màn hình */
-    left: 50%; /* Đặt left ở giữa màn hình */
-    transform: translate(-50%, -50%); /* Dịch chuyển phần tử để nó được căn giữa màn hình */
-    box-shadow: 0 0 0 0dvi inset, 0 0 0 4.5px #0aa751, 0 0 0 8px #0cc2f2; /* Thêm hiệu ứng gradient border */
+    position: fixed; 
+    top: 25%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    box-shadow: 0 0 0 0dvi inset, 0 0 0 4.5px #0aa751, 0 0 0 8px #0cc2f2; 
   }
 
 
