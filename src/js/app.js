@@ -2,16 +2,16 @@ function startTimer(song) {
     var currentTimeDisplay = document.getElementById('current-time');
     var durationDisplay = document.getElementById('duration');
 
-    durationDisplay.textContent = convertTimeFormat(song.duration); // Update duration immediately
+    durationDisplay.textContent = convertTimeFormat(song.duration); 
 
     var timer = setInterval(function() {
         if (!song.paused || !song.ended) {
             var currentTime = song.currentTime;
             currentTimeDisplay.innerHTML = convertTimeFormat(currentTime);
         } else {
-            clearInterval(timer); // Clear the interval if the song is paused or ended
+            clearInterval(timer); 
         }
-    }, 1000); // Update every second
+    }, 1000);
 }
 
 function convertTimeFormat(timeInSeconds) {
@@ -22,8 +22,8 @@ function convertTimeFormat(timeInSeconds) {
     return paddedMinutes + ':' + paddedSeconds;
 }
 
-var song; // Define the song outside of the window.onload to use in other functions
-var isPlaying = false; // Track if the song is playing or not
+var song; 
+var isPlaying = false; 
 
 window.onload = function() {
     var myPlaylist = [
@@ -55,7 +55,7 @@ else if(rd === 9) namee = "Cà phê";
 
     var randomSong = myPlaylist[rd];
     song = new Audio(randomSong);
-    song.oncanplaythrough = function() { // Make sure to start the timer only when the song is loaded
+    song.oncanplaythrough = function() {
         startTimer(song);
     }
 
