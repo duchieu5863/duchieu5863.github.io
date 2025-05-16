@@ -108,8 +108,8 @@ body {
 
 
 .music-player {
-    width: 100px;
-    padding: 10px;
+    width: 225px;
+    padding: 15px;
     background: linear-gradient(to bottom, #0aa751, #1b6a9f);
     border-radius: 20px;
     position:fixed;
@@ -121,7 +121,7 @@ body {
 }
 
 .music-player:hover {
-    width: 185px;
+    width: 288px;
     box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
 }
 
