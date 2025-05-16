@@ -144,3 +144,47 @@ body {
     color: #333;
     margin-top: 10px;
 }
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 10000;
+}
+
+.social-icons .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-color: #242527 2px solid;
+  display: inline-block;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.icon.github {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/25/25231.png');
+}
+
+.icon.facebook {
+  background-image: url('https://cdn.discordapp.com/attachments/1344674644833210498/1372932414451617873/image.png?ex=68289273&is=682740f3&hm=07c29b918466a2f259475901d54c3cc722800c2425835afc822b9b384fc57a25&');
+}
+
+.icon.youtube {
+  background-image: url('https://cdn.discordapp.com/attachments/1344674644833210498/1372932618558898227/image.png?ex=682892a4&is=68274124&hm=8f7c51593a663cf1f4072d6fe08f4d44390193c06e2e7a99fda207971cee0db2&');
+}
+
+.icon.discord {
+  background-image: url('https://cdn.discordapp.com/attachments/1344674644833210498/1372932914748063907/image.png?ex=682892ea&is=6827416a&hm=76ea64f93239318074ad14475fbdefef592f43157af6f235fbfecc50081f60b7&');
+}
