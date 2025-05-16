@@ -150,8 +150,12 @@ body {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  opacity: 0;
   gap: 15px;
   z-index: 10000;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+
 }
 
 .social-icons .icon {
