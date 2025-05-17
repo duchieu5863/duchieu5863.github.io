@@ -30,24 +30,33 @@
   </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-  $(document).on('mousemove', function(e) {
-    if (!$('#overlay').is(':visible')) {
-      $('#circularcursor').css({
-        left: e.pageX,
-        top: e.pageY
-      });
+  $(document).ready(function() {
+    const $cursor = $('#circularcursor');
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+    
+    $(document).on('mousemove', function(e) {
+      mouseX = e.pageX;
+      mouseY = e.pageY;
+    });
+  
+    function animateCursor() {
+      currentX += (mouseX - currentX) * 0.1982;
+      currentY += (mouseY - currentY) * 0.1982;
+      $cursor.css({ left: currentX + 'px', top: currentY + 'px' });
+      requestAnimationFrame(animateCursor);
     }
+  
+    animateCursor();
+  
+    setTimeout(function() {
+      $('body').removeClass('loading');
+      $('#overlay').removeClass('show-cursor').fadeOut('slow');
+      $('#content').fadeIn('slow');
+      $('.social-icons').css({ opacity: 1, pointerEvents: 'auto' });
+    }, 3000);
   });
-
-  setTimeout(function() {
-    $('body').removeClass('loading');
-    $('#overlay').removeClass('show-cursor').fadeOut('slow');
-    $('#content').fadeIn('slow');
-    $('.social-icons').css({ opacity: 1, pointerEvents: 'auto' });
-  }, 3000);
-});
-</script>
+  </script>
 <script src="src/js/app.js"></script>
 </body>
 </html>
