@@ -13,10 +13,16 @@
   
   <div id="circularcursor"></div>
   <div class="music-player">
-    <h2 id="song"></h2>
-    <p><span id="current-time">00:00</span> / <span id="duration">00:00</span></p>
-    <div class="timer" id="timer"></div>
+    <div class="player-info">
+      <h3 id="song">Đang tải...</h3>
+      <span id="duration-info">00:00 / 00:00</span>
+    </div>
+    <div class="controls">
+      <button id="play-btn">▶</button>
+      <input type="range" id="progress" value="0" min="0" max="100">
+    </div>
   </div>
+  
   <div class="card-container">
     <div class="middle-circle">
     </div>
@@ -54,6 +60,7 @@
       $('#overlay').removeClass('show-cursor').fadeOut('slow');
       $('#content').fadeIn('slow');
       $('.social-icons').css({ opacity: 1, pointerEvents: 'auto' });
+      $('.music-player').fadeIn('slow');
     }, 3000);
 
 const textEl = document.querySelector('.text');
@@ -68,6 +75,20 @@ function typeWriter() {
 }
 setTimeout(typeWriter, 3000);
 
+  });
+  </script>
+  <script>
+  document.addEventListener("click", (e) => {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.textContent = "UwU!";
+    star.style.left = `${e.clientX - 10}px`;
+    star.style.top = `${e.clientY - 10}px`;
+    document.body.appendChild(star);
+  
+    setTimeout(() => {
+      star.remove();
+    }, 800);
   });
   </script>
 <script src="src/js/app.js"></script>
