@@ -1,77 +1,74 @@
-function startTimer(song) {
-    var currentTimeDisplay = document.getElementById('current-time');
-    var durationDisplay = document.getElementById('duration');
-
-    durationDisplay.textContent = convertTimeFormat(song.duration); 
-
-    var timer = setInterval(function() {
-        if (!song.paused || !song.ended) {
-            var currentTime = song.currentTime;
-            currentTimeDisplay.innerHTML = convertTimeFormat(currentTime);
-        } else {
-            clearInterval(timer); 
-        }
-    }, 1000);
-}
-
-function convertTimeFormat(timeInSeconds) {
-    var minutes = Math.floor(timeInSeconds / 60);
-    var seconds = Math.floor(timeInSeconds % 60);
-    var paddedMinutes = minutes.toString().padStart(2, '0');
-    var paddedSeconds = seconds.toString().padStart(2, '0');
-    return paddedMinutes + ':' + paddedSeconds;
-}
-
-var song; 
-var isPlaying = false; 
-
-window.onload = function() {
-    var myPlaylist = [
-        "src/audio/tiptoe.mp3",
-        "src/audio/yeulam.mp3",
-        "src/audio/anhlangoailecuaem.mp3",
-        "src/audio/doi.mp3",
-        "src/audio/lunglay.mp3",
-        "src/audio/cahvd.mp3",
-        "src/audio/haydeconchiudau.mp3",
-        "src/audio/thichthich.mp3",
-        "src/audio/idol.mp3",
-        "src/audio/caphe.mp3",
-
+function convertTimeFormat(seconds) {
+    const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+    const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+  
+  let song;
+  let isPlaying = false;
+  
+  window.onload = function () {
+    const myPlaylist = [
+      "src/audio/tiptoe.mp3",
+      "src/audio/yeulam.mp3",
+      "src/audio/anhlangoailecuaem.mp3",
+      "src/audio/doi.mp3",
+      "src/audio/lunglay.mp3",
+      "src/audio/cahvd.mp3",
+      "src/audio/haydeconchiudau.mp3",
+      "src/audio/thichthich.mp3",
+      "src/audio/idol.mp3",
+      "src/audio/caphe.mp3"
     ];
-    let namee;
-    const rd = Math.floor(Math.random() * myPlaylist.length);
-
-    if (rd === 2) namee = "Anh là ngoại lệ của em ";
-    else if (rd === 1) namee = "Yêu nắm";
-    else if (rd === 3) namee = "Đợi";
-else if(rd === 4) namee = "Lung lay";
-else if(rd === 5) namee = "Chẳng ai hiểu về Drill";
-else if(rd === 6) namee = "Hãy cho con chịu đau khổ thay em";
-else if(rd === 7) namee = "Thich Thich";
-else if(rd === 8) namee = "Idol - YOASOBI";
-else if(rd === 9) namee = "Cà phê";
-    else namee = "Tip Toe";
-
-    var randomSong = myPlaylist[rd];
-    song = new Audio(randomSong);
-    song.oncanplaythrough = function() {
-        startTimer(song);
-    }
-
-    var musicPlayer = document.querySelector('.music-player');
-    musicPlayer.addEventListener('click', function() {
-        if (!isPlaying) {
-            song.play();
-            isPlaying = true;
-        } else {
-            song.pause()
-            isPlaying = false
-        }
-    });
-
-
+  
+    const songNames = [
+      "Tip Toe",
+      "Yêu nắm",
+      "Anh là ngoại lệ của em",
+      "Đợi",
+      "Lung lay",
+      "Chẳng ai hiểu về Drill",
+      "Hãy cho con chịu đau khổ thay em",
+      "Thich Thich",
+      "Idol - YOASOBI",
+      "Cà phê"
+    ];
+  
+    const index = Math.floor(Math.random() * myPlaylist.length);
+    song = new Audio(myPlaylist[index]);
+  
     const songTitle = document.getElementById("song");
-    songTitle.textContent = namee;
-}
-
+    const durationInfo = document.getElementById("duration-info");
+    const progressBar = document.getElementById("progress");
+    const playBtn = document.getElementById("play-btn");
+  
+    song.addEventListener("canplay", () => {
+      durationInfo.textContent = `00:00 / ${convertTimeFormat(song.duration)}`;
+    });
+  
+    song.addEventListener("timeupdate", () => {
+      const current = song.currentTime;
+      const total = song.duration;
+      durationInfo.textContent = `${convertTimeFormat(current)} / ${convertTimeFormat(total)}`;
+      progressBar.value = (current / total) * 100;
+    });
+  
+    progressBar.addEventListener("input", () => {
+      song.currentTime = (progressBar.value / 100) * song.duration;
+    });
+  
+    playBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        song.play();
+        isPlaying = true;
+        playBtn.textContent = "⏸";
+      } else {
+        song.pause();
+        isPlaying = false;
+        playBtn.textContent = "▶";
+      }
+    });
+  
+    songTitle.textContent = songNames[index];
+  };
+  
