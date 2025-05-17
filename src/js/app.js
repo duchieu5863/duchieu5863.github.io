@@ -18,20 +18,22 @@ function convertTimeFormat(seconds) {
       "src/audio/haydeconchiudau.mp3",
       "src/audio/thichthich.mp3",
       "src/audio/idol.mp3",
-      "src/audio/caphe.mp3"
+      "src/audio/caphe.mp3",
+      "src/audio/pipo.mp3"
     ];
   
     const songNames = [
-      "Tip Toe",
+      "Tip Toe - HYBS",
       "Yêu nắm",
       "Anh là ngoại lệ của em",
-      "Đợi",
+      "Đợi - 52hz",
       "Lung lay",
       "Chẳng ai hiểu về Drill",
       "Hãy cho con chịu đau khổ thay em",
-      "Thich Thich",
+      "Thich Thich - Phuong Ly",
       "Idol - YOASOBI",
-      "Cà phê"
+      "Cà phê - MIN",
+      "Pipo Pipo - Serani Poji"
     ];
   
     const index = Math.floor(Math.random() * myPlaylist.length);
