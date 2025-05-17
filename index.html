@@ -55,6 +55,19 @@
       $('#content').fadeIn('slow');
       $('.social-icons').css({ opacity: 1, pointerEvents: 'auto' });
     }, 3000);
+
+const textEl = document.querySelector('.text');
+const fullText = "Duc Hieu";
+let index = 0;
+
+function typeWriter() {
+  textEl.textContent = fullText.slice(0, index++);
+  if (index <= fullText.length) {
+    setTimeout(typeWriter, 150);
+  }
+}
+setTimeout(typeWriter, 3000);
+
   });
   </script>
 <script src="src/js/app.js"></script>
