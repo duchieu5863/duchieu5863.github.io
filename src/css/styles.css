@@ -61,9 +61,9 @@ body {
     cursor: wait !important;
   }
   .spinner {
-    border: 10px solid rgba(255, 255, 255, 0.3);
+    border: 15px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    border-top: 10px solid #0066ff;
+    border-top: 15px solid #0066ff;
     width: 60px;
     height: 60px;
     animation: spin 1s linear infinite;
@@ -87,7 +87,96 @@ body {
     transform: translate(-50%, -50%); 
     box-shadow: 0 0 0 0dvi inset, 0 0 0 4.5px #0aa751, 0 0 0 8px #0cc2f2; 
   }
-
+  .star {
+    position: fixed;
+    font-size: 20px;
+    color: #c7c6bf;
+    pointer-events: none;
+    animation: sparkle 0.8s ease-out forwards;
+    z-index: 9999;
+    filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #0ff);
+  }
+  
+  @keyframes sparkle {
+    0% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5) rotate(20deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0.5) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+  .music-player {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 350px;
+    background: linear-gradient(to bottom, #003eb9, #0aa751);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    display: none;
+  }
+  
+  .music-player:hover {
+    width: 350px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+  }
+  
+  .player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .player-info h3 {
+    font-size: 16px;
+    margin: 0;
+    color: rgb(255, 255, 255);
+  }
+  
+  #duration-info {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #play-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #0ff;
+    transition: transform 0.2s ease;
+  }
+  
+  #play-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  #progress {
+    flex: 1;
+    accent-color: #0ff;
+    height: 4px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+    
 
 #circularcursor {
     width: 20px;
@@ -99,59 +188,13 @@ body {
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s, border-width 0.2s;
-    animation: pulse 1.5s infinite alternate;
     background-color: rgba(127, 216, 255, 0.5);
     backdrop-filter:transperent;
     box-shadow: 0px 0px 10px rgba(12, 194, 226, 0.75);
 }
 
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.2);
-    }
-}
 
 
-.music-player {
-    width: 225px;
-    padding: 15px;
-    background: linear-gradient(to bottom, #0aa751, #1b6a9f);
-    border-radius: 20px;
-    position:fixed;
-    top: 10px;
-    left: 15px;
-    overflow: hidden;
-    transition: width 0.5s, height 0.5s, box-shadow 0.5s;
-    box-shadow: 0 0 15px rgba(116, 97, 97, 0.1);
-}
-
-.music-player:hover {
-    width: 288px;
-    box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
-}
-
-.music-player audio {
-    width: 100%;
-}
-
-.music-player h2 {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 20px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: beige;
-}
-
-
-.timer {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin-top: 10px;
-}
 .social-icons {
   position: fixed;
   bottom: 20px;
