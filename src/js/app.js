@@ -19,7 +19,8 @@ function convertTimeFormat(seconds) {
       "src/audio/thichthich.mp3",
       "src/audio/idol.mp3",
       "src/audio/caphe.mp3",
-      "src/audio/pipo.mp3"
+      "src/audio/pipo.mp3",
+      "src/audio/nuhonbisou.mp3"
     ];
   
     const songNames = [
@@ -33,7 +34,8 @@ function convertTimeFormat(seconds) {
       "Thich Thich - Phuong Ly",
       "Idol - YOASOBI",
       "Cà phê - MIN",
-      "Pipo Pipo - Serani Poji"
+      "Pipo Pipo - Serani Poji",
+      "Nụ hôn Bisou - Mike"
     ];
   
     const index = Math.floor(Math.random() * myPlaylist.length);
