@@ -8,6 +8,19 @@
 <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
+  <div id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav-panel">
+    <ul>
+      <li><a href="#" title="Home">🏠</a></li>
+      <li><a href="#" title="About">👤</a></li>
+      <li><a href="#" title="Projects">💼</a></li>
+      <li><a href="#" title="Contact">📬</a></li>
+    </ul>
+  </nav>
   <div id="overlay">
     <div class="spinner"></div>
   </div>
@@ -91,6 +104,16 @@ setTimeout(typeWriter, 3000);
       star.remove();
     }, 800);
   });
+  </script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const panel = document.getElementById('nav-panel');
+
+    hamburger.addEventListener('click', () => {
+      panel.classList.toggle('open');
+    });
+
+    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
   </script>
 <script src="src/js/app.js"></script>
 </body>
