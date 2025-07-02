@@ -233,13 +233,13 @@ body {
 }
 
 .icon.facebook {
-  background-image: url('https://cdn.discordapp.com/attachments/1344674644833210498/1372932414451617873/image.png?ex=68289273&is=682740f3&hm=07c29b918466a2f259475901d54c3cc722800c2425835afc822b9b384fc57a25&');
+  background-image: url('../img/fb.png');
 }
 
 .icon.youtube {
-  background-image: url('https://cdn.discordapp.com/attachments/1344674644833210498/1372932618558898227/image.png?ex=682892a4&is=68274124&hm=8f7c51593a663cf1f4072d6fe08f4d44390193c06e2e7a99fda207971cee0db2&');
+  background-image: url('../img/youtube.png');
 }
 
 .icon.discord {
-  background-image: url('https://cdn.discordapp.com/attachments/1344674644833210498/1372932914748063907/image.png?ex=682892ea&is=6827416a&hm=76ea64f93239318074ad14475fbdefef592f43157af6f235fbfecc50081f60b7&');
+  background-image: url('../img/discord.png');
 }
