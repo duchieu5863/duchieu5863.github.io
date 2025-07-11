@@ -20,7 +20,8 @@ function convertTimeFormat(seconds) {
       "src/audio/idol.mp3",
       "src/audio/caphe.mp3",
       "src/audio/pipo.mp3",
-      "src/audio/nuhonbisou.mp3"
+      "src/audio/nuhonbisou.mp3",
+      "src/audio/benanh.mp3"
     ];
   
     const songNames = [
@@ -35,7 +36,8 @@ function convertTimeFormat(seconds) {
       "Idol - YOASOBI",
       "Cà phê - MIN",
       "Pipo Pipo - Serani Poji",
-      "Nụ hôn Bisou - Mike"
+      "Nụ hôn Bisou - Mike",
+      "BEN ANH - EREN, Lil Liem"
     ];
   
     const index = Math.floor(Math.random() * myPlaylist.length);
